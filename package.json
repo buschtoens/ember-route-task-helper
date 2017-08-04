@@ -1,17 +1,23 @@
 {
   "name": "ember-route-task-helper",
   "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Easily access tasks defined on a route in your templates",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "helper",
+    "route task",
+    "ember-concurrency"
   ],
   "license": "MIT",
-  "author": "",
+  "author": "Jan Buschtöns <jan@buschtoens.me> (https://jan.buschtoens.me)",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buschtoens/ember-route-task-helper.git"
+  },
   "scripts": {
     "build": "ember build",
     "start": "ember server",
@@ -21,6 +27,7 @@
     "ember-cli-babel": "^6.3.0"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.3",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~2.14.2",
@@ -33,6 +40,8 @@
     "ember-cli-shims": "^1.1.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^1.2.0",
+    "ember-concurrency": "^0.8.7",
+    "ember-decorators": "^1.2.1",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
@@ -45,5 +54,8 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
+  },
+  "peerDependencies": {
+    "ember-concurrency": "^0.6.0"
   }
 }
