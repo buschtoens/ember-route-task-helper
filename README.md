@@ -25,6 +25,39 @@ Minimum required version is `0.6.x`.
 
 ## Usage
 
+Wherever in a template you would access a task by its name, replace it with
+`(route-task "taskName")` and move that task to a route. For instance:
+
+```hbs
+{{task-button
+  task=myTask
+}}
+
+{{!-- now becomes --}}
+
+{{task-button
+  task=(route-task "myTask")
+}}
+```
+
+Notice the quotes around `"myTask"`.
+
+You can also curry your tasks:
+
+```hbs
+{{task-button
+  task=(task myTask "Freddie" "Morecurry")
+}}
+
+{{!-- now becomes --}}
+
+{{task-button
+  task=(route-task "myTask" "Freddie" "Morecurry")
+}}
+```
+
+### Exemplary Migration
+
 Let's start with a traditional task defined on a component.
 
 ```js
@@ -127,12 +160,36 @@ export default Route.extends({
 ```hbs
 {{!-- app/templates/user.hbs --}}
 
-{{task-aware-button
+{{task-button
   task=(route-task "deleteUser" model)
   idleLabel=(concat "Delete " model.name)
   runningLabel="Cancel deletion"
 }}
 ```
+
+I personally dislike repeating `(route-task)` a bunch of times in my templates or even worse having to use the `(get)` helper to derive state from a task. You can avoid that by either only passing a task to a component (as shown in the `{{task-button}}` example above) or by using the `{{with}}` helper:
+
+```hbs
+{{#with (route-task "deleteUser" model) as |deleteUser|}}
+  {{#if deleteUser.isIdle}}
+    <button onclick={{perform deleteUser}}>
+      Delete {{model.name}}
+    </button>
+  {{else}}
+    Deleting {{model.name}} in 5 seconds. You can still abort.
+
+    <button onclick={{cancel-all deleteUser}}>
+      Nah, spare their life.
+    </button>
+  {{/if}}
+{{/while}}
+```
+
+## Contributing
+
+I sincerely hope this addon serves you well. Should you encounter a bug, have great idea or just a question, please do [open an issue][new-issue] and let me know. Even better yet, submit a PR yourself! :blush:
+
+This addon is using the [Prettier code formatter][prettier]. It's embedded as a fixable eslint rule. If you're editor is set up to fix eslint errors on save, you're code is auto formatted. If not, please make sure you're not getting any linter errors.
 
 ## Attribution
 
@@ -146,3 +203,5 @@ A huge **thank you** to goes out to [@machty][machty] for developing [ember-conc
 [Luiz-n]: https://github.com/Luiz-N
 [DockYard]: https://github.com/DockYard
 [machty]: https://github.com/machty
+[new-issue]: https://github.com/buschtoens/ember-route-task-helper/issues/new
+[prettier]: https://prettier.io/
