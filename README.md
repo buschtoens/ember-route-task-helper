@@ -1,5 +1,13 @@
 # ember-route-task-helper
 
+[![Build Status](https://travis-ci.org/buschtoens/ember-route-task-helper.svg)](https://travis-ci.org/buschtoens/ember-route-task-helper)
+[![npm version](https://badge.fury.io/js/ember-route-task-helper.svg)](http://badge.fury.io/js/ember-route-task-helper)
+[![Download Total](https://img.shields.io/npm/dt/ember-route-task-helper.svg)](http://badge.fury.io/js/ember-route-task-helper)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-route-task-helper.svg)](https://emberobserver.com/addons/ember-route-task-helper)
+[![Greenkeeper badge](https://badges.greenkeeper.io/buschtoens/ember-route-task-helper.svg)](https://greenkeeper.io/)
+[![dependencies Status](https://david-dm.org/buschtoens/ember-route-task-helper/status.svg)](https://david-dm.org/buschtoens/ember-route-task-helper)
+[![devDependencies Status](https://david-dm.org/buschtoens/ember-route-task-helper/dev-status.svg)](https://david-dm.org/buschtoens/ember-route-task-helper?type=dev)
+
 The `route-task` template helper allows you to easily access tasks defined on a
 route in the currently active route hierarchy. Essentially this addon is just
 like [**ember-route-action-helper**][ember-route-action-helper] but for
