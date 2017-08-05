@@ -1,13 +1,14 @@
 # ember-route-task-helper
 
-> Easily access tasks defined on a route in your templates.
-
 The `route-task` template helper allows you to easily access tasks defined on a
 route in the currently active route hierarchy. Essentially this addon is just
 like [**ember-route-action-helper**][ember-route-action-helper] but for
 [**ember-concurrency**][ember-concurrency] tasks.
 
 ## Installation
+
+This addon will work on Ember versions `1.13.x` and up only, due to use of the
+new `Helper` implementation.
 
 ```
 ember install ember-route-task-helper
@@ -19,6 +20,8 @@ installed. If you haven't already, run this command first:
 ```
 ember install ember-concurrency
 ```
+
+Minimum required version is `0.6.x`.
 
 ## Usage
 
