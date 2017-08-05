@@ -190,7 +190,7 @@ I personally dislike repeating `(route-task)` a bunch of times in my templates o
       Nah, spare their life.
     </button>
   {{/if}}
-{{/while}}
+{{/with}}
 ```
 
 ## Contributing
