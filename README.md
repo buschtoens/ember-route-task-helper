@@ -134,5 +134,12 @@ export default Route.extends({
 }}
 ```
 
+## Attribution
+
+The original idea for this addon was brought up in [machty/ember-concurrency/#89][issue-89] by @Luiz-N. This addon is in many ways a straight copy and paste from [ember-route-action-helper][ember-route-action-helper] by @DockYard.
+
+A huge **thank you** to goes out to @machty for developing [ember-concurrency][ember-concurrency] in the first place. :heart:
+
 [ember-concurrency]: https://github.com/machty/ember-concurrency
 [ember-route-action-helper]: https://github.com/DockYard/ember-route-action-helper
+[issue-89]: https://github.com/machty/ember-concurrency/issues/89
