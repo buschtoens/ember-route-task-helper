@@ -1,36 +1,31 @@
-import Ember from 'ember';
+import Helper from '@ember/component/helper';
+import { A } from '@ember/array';
+import { computed, get } from '@ember/object';
+import { getOwner } from '@ember/application';
+import { assert } from '@ember/debug';
 import { Task } from 'ember-concurrency/-task-property';
 
-const {
-  A: emberArray,
-  Helper,
-  assert,
-  computed,
-  get,
-  getOwner
-} = Ember;
-
 function getCurrentHandlerInfos(router) {
-  let routerLib = router._routerMicrolib || router.router;
+  const routerLib = router._routerMicrolib || router.router;
 
   return routerLib.currentHandlerInfos;
 }
 
-function getRoutes(router) {
-  return emberArray(getCurrentHandlerInfos(router))
+function getCurrentRoutes(router) {
+  return A(getCurrentHandlerInfos(router))
     .mapBy('handler')
     .reverse();
 }
 
-function getRouteWithTask(router, taskName) {
-  for (const route of getRoutes(router)) {
+function findTaskInCurrentRouteHierarchy(router, taskName) {
+  for (const route of getCurrentRoutes(router)) {
     const task = get(route, taskName);
     if (task instanceof Task) {
-      return { task, handler: route };
+      return task;
     }
   }
 
-  return { task: null, handler: null };
+  return null;
 }
 
 export default Helper.extend({
@@ -39,11 +34,11 @@ export default Helper.extend({
   }).readOnly(),
 
   compute([taskName, ...params]) {
-    let router = get(this, 'router');
+    const router = get(this, 'router');
     assert('[ember-route-task-helper] Unable to lookup router', router);
 
-    const { task, handler } = getRouteWithTask(router, taskName);
-    assert(`[ember-route-task-helper] Unable to find action ${taskName}`, handler);
+    const task = findTaskInCurrentRouteHierarchy(router, taskName);
+    assert(`[ember-route-task-helper] Unable to find task ${taskName}`, task);
 
     // FIXME
     // if (params.length) {
