@@ -187,7 +187,7 @@ I personally dislike repeating `(route-task)` a bunch of times in my templates o
 
 ## Contributing
 
-I sincerely hope this addon serves you well. Should you encounter a bug, have great idea or just a question, please do [open an issue][new-issue] and let me know. Even better yet, submit a PR yourself! :blush:
+I sincerely hope this addon serves you well. Should you encounter a bug, have a great idea or just a question, please do [open an issue][new-issue] and let me know. Even better yet, submit a PR yourself! :blush:
 
 This addon is using the [Prettier code formatter][prettier]. It's embedded as a fixable eslint rule. If you're editor is set up to fix eslint errors on save, you're code is auto formatted. If not, please make sure you're not getting any linter errors.
 
