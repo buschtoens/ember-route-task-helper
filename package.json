@@ -63,6 +63,6 @@
     "configPath": "tests/dummy/config"
   },
   "peerDependencies": {
-    "ember-concurrency": "^0.6.0"
+    "ember-concurrency": ">=0.6"
   }
 }
