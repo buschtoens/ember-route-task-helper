@@ -1,4 +1,4 @@
-import { merge } from '@ember/polyfill';
+import { merge } from '@ember/polyfills';
 import { run } from '@ember/runloop';
 import Application from '../../app';
 import config from '../../config/environment';
