@@ -12,9 +12,7 @@ function getCurrentHandlerInfos(router) {
 }
 
 function getCurrentRoutes(router) {
-  return A(getCurrentHandlerInfos(router))
-    .mapBy('handler')
-    .reverse();
+  return A(getCurrentHandlerInfos(router)).mapBy('handler').reverse();
 }
 
 function findTaskInCurrentRouteHierarchy(router, taskName) {
