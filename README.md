@@ -129,8 +129,8 @@ export default Route.extends({
 
 {{task-aware-button
   task=(route-task "deleteUser" model)
-  idleLable=(concat "Delete " model.name)
-  runningLable="Cancel deletion"
+  idleLabel=(concat "Delete " model.name)
+  runningLabel="Cancel deletion"
 }}
 ```
 
