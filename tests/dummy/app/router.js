@@ -6,6 +6,13 @@ const Router = EmberRouter.extend({
   rootURL: config.rootURL
 });
 
-Router.map(function() {});
+Router.map(function() {
+  this.route('test', function() {
+    this.route('task-route', function() {
+      this.route('no-task-route');
+    });
+    this.route('no-task-route');
+  });
+});
 
 export default Router;
