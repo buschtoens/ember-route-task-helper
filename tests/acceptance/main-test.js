@@ -46,13 +46,13 @@ moduleForAcceptance('Acceptance | main', {
     });
     this.application.register('component:task-component', TaskComponent);
 
-    class TaskRoute extends Route {
-      TEST_TASK = task(function*(...params) {
+    const TaskRoute = Route.extend({
+      TEST_TASK: task(function*(...params) {
         assert.ok(true, 'task was properly triggered on the route');
         yield timeout(10);
         return params;
-      });
-    }
+      })
+    });
     this.application.register('route:test.task-route', TaskRoute);
   }
 });
