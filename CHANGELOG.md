@@ -1,6 +1,17 @@
 Changelog
 =========
 
+## v0.2.1
+
+The peer dependency on ember-concurrency was relaxed, so that NPM doesn't whine about versions above >=0.7.
+
+#### Commits
+
+- [f86e046c](https://github.com/buschtoens/ember-route-task-helper/commit/f86e046c0d957d94f407d08c45ac86963f15995f) **docs(README)**: add dem shiny badges *by [Jan Buschtöns](https://github.com/buschtoens)*
+- [6feb8403](https://github.com/buschtoens/ember-route-task-helper/commit/6feb84035033310f716f4a081dcecd28f90520c4) **docs(README)**: inserted a missing indefinite article *by [Jan Buschtöns](https://github.com/buschtoens)*
+- [282047a1](https://github.com/buschtoens/ember-route-task-helper/commit/282047a1a80d4eef37388ae7a2123eaf26cc2ae7) **test(route-task)**: skip, until we have some meaningful tests *by [Jan Buschtöns](https://github.com/buschtoens)*
+- [2cb6c60d](https://github.com/buschtoens/ember-route-task-helper/commit/2cb6c60dbcc5fd6c397f43e529a1a5f85524f296) **docs(README)**: improve Usage section and add Contributing section *by [Jan Buschtöns](https://github.com/buschtoens)*
+
 ## v0.2.0
 
 Currying via the `route-task` helper is now enabled.

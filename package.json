@@ -1,6 +1,6 @@
 {
   "name": "ember-route-task-helper",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Easily access tasks defined on a route in your templates",
   "keywords": [
     "ember-addon",
