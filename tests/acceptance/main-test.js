@@ -10,18 +10,16 @@ import { Task } from 'ember-concurrency/-task-property';
 
 moduleForAcceptance('Acceptance | main', {
   beforeEach(assert) {
-    class TaskComponent extends Component.extend({
+    const TaskComponent = Component.extend({
       classNames: 'task-component',
-      classNameBindings: ['isDone', 'isSuccessful']
-    }) {
-      static positionalParams = ['task', 'args', 'expectedReturnValue'];
+      classNameBindings: ['isDone', 'isSuccessful'],
 
-      task;
-      args;
-      expectedReturnValue;
+      task: null,
+      args: null,
+      expectedReturnValue: null,
 
-      isDone = false;
-      isSuccessful = false;
+      isDone: false,
+      isSuccessful: false,
 
       async click() {
         const task = get(this, 'task');
@@ -43,7 +41,9 @@ moduleForAcceptance('Acceptance | main', {
 
         set(this, 'isSuccessful', true);
       }
-    }
+    }).reopenClass({
+      positionalParams: ['task', 'args', 'expectedReturnValue']
+    });
     this.application.register('component:task-component', TaskComponent);
 
     class TaskRoute extends Route {
