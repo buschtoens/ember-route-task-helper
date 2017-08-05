@@ -40,10 +40,9 @@ export default Helper.extend({
     const task = findTaskInCurrentRouteHierarchy(router, taskName);
     assert(`[ember-route-task-helper] Unable to find task ${taskName}`, task);
 
-    // FIXME
-    // if (params.length) {
-    //   return task._curry(...params);
-    // }
+    if (params.length) {
+      return task._curry(...params);
+    }
 
     return task;
   }
