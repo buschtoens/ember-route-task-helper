@@ -1,14 +1,14 @@
-{{#with (route-task "taskOnApplicationRoute") as |task|}}
-  {{#if (get task "isIdle")}}
-    <button onclick={{perform task "Freddie" "Morecurry"}}>
+{{#with (route-task "taskOnApplicationRoute" "Freddie") as |task|}}
+  {{#if task.isIdle}}
+    <button onclick={{perform task "Morecurry"}}>
       Perform taskOnApplicationRoute
     </button>
   {{else}}
-    Running taskOnApplicationRoute
-
     <button onclick={{cancel-all task}}>
       Cancel taskOnApplicationRoute
     </button>
+
+      Running taskOnApplicationRoute
   {{/if}}
 
   <br>
