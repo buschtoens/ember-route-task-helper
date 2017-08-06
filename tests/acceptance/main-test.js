@@ -4,24 +4,23 @@ import { visit, click, find, waitUntil } from 'ember-native-dom-helpers';
 import Component from '@ember/component';
 import Route from '@ember/routing/route';
 import { get, set } from '@ember/object';
+import { run } from '@ember/runloop';
 import hbs from 'htmlbars-inline-precompile';
 import { task, timeout } from 'ember-concurrency';
 import { Task } from 'ember-concurrency/-task-property';
 
 moduleForAcceptance('Acceptance | main', {
   beforeEach(assert) {
-    class TaskComponent extends Component.extend({
+    const TaskComponent = Component.extend({
       classNames: 'task-component',
-      classNameBindings: ['isDone', 'isSuccessful']
-    }) {
-      static positionalParams = ['task', 'args', 'expectedReturnValue'];
+      classNameBindings: ['isDone', 'isSuccessful'],
 
-      task;
-      args;
-      expectedReturnValue;
+      task: null,
+      args: null,
+      expectedReturnValue: null,
 
-      isDone = false;
-      isSuccessful = false;
+      isDone: false,
+      isSuccessful: false,
 
       async click() {
         const task = get(this, 'task');
@@ -30,7 +29,8 @@ moduleForAcceptance('Acceptance | main', {
 
         const args = get(this, 'args') || [];
         const actualReturnValue = await task.perform(...args);
-        set(this, 'isDone', true);
+
+        run(() => set(this, 'isDone', true));
 
         const expectedReturnValue = get(this, 'expectedReturnValue');
         if (expectedReturnValue) {
@@ -41,18 +41,20 @@ moduleForAcceptance('Acceptance | main', {
           );
         }
 
-        set(this, 'isSuccessful', true);
+        run(() => set(this, 'isSuccessful', true));
       }
-    }
+    }).reopenClass({
+      positionalParams: ['task', 'args', 'expectedReturnValue']
+    });
     this.application.register('component:task-component', TaskComponent);
 
-    class TaskRoute extends Route {
-      TEST_TASK = task(function*(...params) {
+    const TaskRoute = Route.extend({
+      TEST_TASK: task(function*(...params) {
         assert.ok(true, 'task was properly triggered on the route');
         yield timeout(10);
         return params;
-      });
-    }
+      })
+    });
     this.application.register('route:test.task-route', TaskRoute);
   }
 });
