@@ -8,7 +8,10 @@ module.exports = {
 
   afterPublish(project, versions) {
     // Publish dummy app with docs to gh-pages
-    runCommand(`ember github-pages:commit --message "Released ${versions.next}"`);
+    runCommand('git branch -f gh-pages origin/gh-pages');
+    runCommand(
+      `ember github-pages:commit --message "Released ${versions.next}"`
+    );
     runCommand('git push origin gh-pages:gh-pages');
   }
 };
