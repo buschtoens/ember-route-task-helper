@@ -33,6 +33,8 @@ Minimum required version is `0.6.x`.
 
 ## Usage
 
+### Template Helper: `(route-task taskName ...curryArguments)`
+
 Wherever in a template you would access a task by its name, replace it with
 `(route-task "taskName")` and move that task to a route. For instance:
 
@@ -64,7 +66,7 @@ You can also curry your tasks:
 }}
 ```
 
-### Exemplary Migration
+#### Exemplary Migration
 
 Let's start with a traditional task defined on a component.
 
@@ -144,8 +146,7 @@ export default Route.extends({
   </button>
 {{/if}}
 ```
-
-Currying is also possible.
+### Currying
 
 ```js
 // app/routes/user.js
@@ -175,6 +176,8 @@ export default Route.extends({
 }}
 ```
 
+### Notes on Syntax
+
 I personally dislike repeating `(route-task)` a bunch of times in my templates or even worse having to use the `(get)` helper to derive state from a task. You can avoid that by either only passing a task to a component (as shown in the `{{task-button}}` example above) or by using the `{{with}}` helper:
 
 ```hbs
@@ -193,6 +196,97 @@ I personally dislike repeating `(route-task)` a bunch of times in my templates o
 {{/with}}
 ```
 
+## Util: `routeTask(context, taskName, ...curryArguments)`
+
+There also is a `routeTask` util, that's really similar to [**ember-invoke-action**][ember-invoke-action] and might come in handy for JS heavy components.
+
+```js
+// app/components/delete-user.js
+import Component from '@ember/component';
+import { get } from '@ember/object';
+import { routeTask } from 'ember-route-task-helper';
+
+export default Component.extends({
+  /**
+   * A User record.
+   * @type {DS.Model}
+   */
+  user: null,
+
+  /**
+   * Deletes the user after a timeout of 5 seconds.
+   */
+  click() {
+    const user = get(this, 'user');
+    routeTask(this, 'deleteUser').perform(user);
+  }
+});
+```
+
+### Currying
+
+As with the `(route-task)` helper, you can curry the task with as many arguments as you like. So the above is interchangeable with:
+
+```js
+click() {
+  const user = get(this, 'user');
+  routeTask(this, 'deleteUser', user).perform();
+}
+```
+
+### `routeTaskFromRouter(router, taskName, ...curryArguments)`
+
+Internally `routeTask` performs a lookup for the `Router` everytime you call it. If you already happen to have the router instance available in your current scope, you could also pass it directly to skip the lookup:
+
+```js
+// app/components/delete-user.js
+import Component from '@ember/component';
+import { get, computed } from '@ember/object';
+import { getOwner } from '@ember/application';
+import { routeTaskFromRouter } from 'ember-route-task-helper';
+
+export default Component.extends({
+  /**
+   * A User record.
+   * @type {DS.Model}
+   */
+  user: null,
+
+  /**
+   * The app's router instance.
+   * @type {Ember.Router}
+   */
+  router: computed(function() {
+    return getOwner(this).lookup('main:router');
+  }).readOnly(),
+
+  /**
+   * Deletes the user after a timeout of 5 seconds.
+   */
+  click() {
+    const router = get(this, 'router');
+    const user = get(this, 'user');
+    routeTaskFromRouter(router, 'deleteUser').perform(user);
+  }
+});
+```
+
+### Notes on DDAU
+
+In my opinion, using `routeTask` in components *generally* isn't a good design pattern. I would much rather prefer to explicitly pass the route task as an attribute:
+
+```hbs
+{{my-component taskName=(route-task "taskName")}}
+```
+
+Just by looking at the component invocation in the template, the user should be able to judge what's going in and what's coming out of a component (DDAU). This way components remain completely agnostic and make no assumptions about the environment they are invoked in.
+
+Calling `routeTask` inside a component is really non-transparent and promotes an unhealthy invisible entanglement.
+
+On the other hand, you can already call `(route-task)` in the component's template.
+
+I've implemented it for feature parity. But just because it's there, doesn't mean you *have* to use it. But don't let me stop you. :stuck_out_tongue_winking_eye: 
+
 ## Contributing
 
 I sincerely hope this addon serves you well. Should you encounter a bug, have a great idea or just a question, please do [open an issue][new-issue] and let me know. Even better yet, submit a PR yourself! :blush:
@@ -207,6 +301,7 @@ A huge **thank you** to goes out to [@machty][machty] for developing [ember-conc
 
 [ember-concurrency]: https://github.com/machty/ember-concurrency
 [ember-route-action-helper]: https://github.com/DockYard/ember-route-action-helper
+[ember-invoke-action]: https://github.com/martndemus/ember-invoke-action
 [issue-89]: https://github.com/machty/ember-concurrency/issues/89
 [Luiz-n]: https://github.com/Luiz-N
 [DockYard]: https://github.com/DockYard
