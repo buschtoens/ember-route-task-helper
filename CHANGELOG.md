@@ -1,6 +1,19 @@
 Changelog
 =========
 
+## v0.3.0
+
+You can now use the `routeTask` and `routeTaskFromRouter` utils in your JS code ([#7](https://github.com/buschtoens/ember-route-task-helper/issues/7)).
+
+#### Commits
+
+- [4ce95510](https://github.com/buschtoens/ember-route-task-helper/commit/4ce955100a7d905352cab73307897274f6269b0c) **docs(README)**: add docs for util and best practice notes *by [Jan Buschtöns](https://github.com/buschtoens)*
+- [ea82ac4f](https://github.com/buschtoens/ember-route-task-helper/commit/ea82ac4fdae20a9df71e5edb92efaa8da10011e0) **refactor(route-task)**: expose `routeTask` and `routeTaskFromRouter` *by [Jan Buschtöns](https://github.com/buschtoens)*
+- [20b79607](https://github.com/buschtoens/ember-route-task-helper/commit/20b79607fdc16a90fbca1db5fe6d61a871f0136b) **test(route-task)**: fix failing tests in Ember <=2.12 *by [Jan Buschtöns](https://github.com/buschtoens)*
+- [eaadbd52](https://github.com/buschtoens/ember-route-task-helper/commit/eaadbd52c09d4a5ab7d1cf85f81941d7cf045b69) **docs(README)**: fix incorrect code example *by [Jan Buschtöns](https://github.com/buschtoens)*
+- [eba28c39](https://github.com/buschtoens/ember-route-task-helper/commit/eba28c395fd96bcfe6a0c2de91297629325ed6b9) **test(route-task)**: add meaningful tests *by [Jan Buschtöns](https://github.com/buschtoens)*
+- [b715ad30](https://github.com/buschtoens/ember-route-task-helper/commit/b715ad30737496758fafd77e4ab53a80e4c46449) **fix(tests/helpers/start-app)**: use correct import for @ember/polyfills *by [Jan Buschtöns](https://github.com/buschtoens)*
+
 ## v0.2.1
 
 The peer dependency on ember-concurrency was relaxed, so that NPM doesn't whine about versions above >=0.7.
