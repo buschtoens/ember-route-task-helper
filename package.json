@@ -24,8 +24,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-cli-babel": "^6.6.0",
-    "eslint-plugin-ember-suave": "^1.0.0"
+    "ember-cli-babel": "^6.6.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
@@ -54,6 +53,7 @@
     "ember-source": "~2.14.1",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-ember-suave": "^1.0.0",
     "loader.js": "^4.2.3",
     "prettier": "^1.5.3"
   },
