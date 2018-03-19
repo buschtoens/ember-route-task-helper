@@ -1,5 +1,5 @@
-/* eslint-env node */
-const execSync = require('child_process').execSync;
+/* eslint-disable node/no-unsupported-features, node/no-unpublished-require, no-console */
+const { execSync } = require('child_process');
 const generateChangelog = require('ember-cli-changelog/lib/tasks/release-with-changelog');
 
 module.exports = {
