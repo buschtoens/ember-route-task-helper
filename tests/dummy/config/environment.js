@@ -1,8 +1,7 @@
-/* eslint-env node */
 'use strict';
 
 module.exports = function(environment) {
-  let ENV = {
+  const ENV = {
     modulePrefix: 'dummy',
     environment,
     rootURL: '/',
@@ -41,12 +40,12 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.autoboot = false;
   }
 
   if (environment === 'production') {
     ENV.locationType = 'hash';
     ENV.rootURL = '/ember-route-task-helper/';
-
   }
 
   return ENV;
