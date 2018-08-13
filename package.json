@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
-    "broccoli-asset-rev": "^2.4.5",
+    "broccoli-asset-rev": "^3.0.0",
     "ember-ajax": "^3.0.0",
     "ember-cli": "~3.0.1",
     "ember-cli-changelog": "^0.3.4",
