@@ -2,6 +2,50 @@
 # yarn lockfile v1
 
 
+"@ember-decorators/component@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/component/-/component-3.0.0.tgz#9f31cc4eac800bedebf69ef8e432519092cd0430"
+  dependencies:
+    "@ember-decorators/utils" "^3.0.0"
+    ember-cli-babel "^6.6.0"
+
+"@ember-decorators/controller@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/controller/-/controller-3.0.0.tgz#1f5b0e88f7456bc869775f70cd86a56cb690f301"
+  dependencies:
+    "@ember-decorators/utils" "^3.0.0"
+    ember-cli-babel "^6.6.0"
+
+"@ember-decorators/data@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/data/-/data-3.0.0.tgz#78c6cb8b9b14eeee4bfd265cd00c95dc09416420"
+  dependencies:
+    "@ember-decorators/utils" "^3.0.0"
+    ember-cli-babel "^6.6.0"
+
+"@ember-decorators/object@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/object/-/object-3.0.0.tgz#84c5d3e62d3b211ffd17a795c0c4a65c3fe52f8d"
+  dependencies:
+    "@ember-decorators/utils" "^3.0.0"
+    ember-cli-babel "^6.6.0"
+    ember-compatibility-helpers "^1.0.0"
+
+"@ember-decorators/service@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/service/-/service-3.0.0.tgz#90fe410b8b2b80ad7227a85259e3a8c3852000a2"
+  dependencies:
+    "@ember-decorators/utils" "^3.0.0"
+    ember-cli-babel "^6.6.0"
+
+"@ember-decorators/utils@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/utils/-/utils-3.0.0.tgz#f8e82ead2c75a8eaf2cef5b1811ab54fcb28bcee"
+  dependencies:
+    babel-plugin-debug-macros "^0.1.11"
+    ember-cli-babel "^6.6.0"
+    ember-compatibility-helpers "^1.0.0"
+
 "@ember/test-helpers@^0.7.18":
   version "0.7.18"
   resolved "https://registry.yarnpkg.com/@ember/test-helpers/-/test-helpers-0.7.18.tgz#a0c474c3029588ec46d2e406252fc072b7f9aa3c"
@@ -625,6 +669,12 @@ babel-plugin-debug-macros@^0.1.10, babel-plugin-debug-macros@^0.1.11:
   dependencies:
     semver "^5.3.0"
 
+babel-plugin-debug-macros@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-debug-macros/-/babel-plugin-debug-macros-0.2.0.tgz#0120ac20ce06ccc57bf493b667cf24b85c28da7a"
+  dependencies:
+    semver "^5.3.0"
+
 babel-plugin-ember-modules-api-polyfill@^1.4.1:
   version "1.4.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-ember-modules-api-polyfill/-/babel-plugin-ember-modules-api-polyfill-1.4.2.tgz#e254f8ed0ba7cf32ea6a71c4770b3568a8577402"
@@ -691,14 +741,6 @@ babel-plugin-syntax-async-functions@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
 
-babel-plugin-syntax-class-properties@^6.8.0:
-  version "6.13.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-class-properties/-/babel-plugin-syntax-class-properties-6.13.0.tgz#d7eb23b79a317f8543962c505b827c7d6cac27de"
-
-babel-plugin-syntax-decorators@^6.1.18:
-  version "6.13.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-syntax-decorators/-/babel-plugin-syntax-decorators-6.13.0.tgz#312563b4dbde3cc806cee3e416cceeaddd11ac0b"
-
 babel-plugin-syntax-exponentiation-operator@^6.8.0:
   version "6.13.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
@@ -714,23 +756,6 @@ babel-plugin-transform-async-to-generator@^6.22.0:
     babel-helper-remap-async-to-generator "^6.24.1"
     babel-plugin-syntax-async-functions "^6.8.0"
     babel-runtime "^6.22.0"
-
-babel-plugin-transform-class-properties@^6.24.1:
-  version "6.24.1"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz#6a79763ea61d33d36f37b611aa9def81a81b46ac"
-  dependencies:
-    babel-helper-function-name "^6.24.1"
-    babel-plugin-syntax-class-properties "^6.8.0"
-    babel-runtime "^6.22.0"
-    babel-template "^6.24.1"
-
-babel-plugin-transform-decorators-legacy@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/babel-plugin-transform-decorators-legacy/-/babel-plugin-transform-decorators-legacy-1.3.4.tgz#741b58f6c5bce9e6027e0882d9c994f04f366925"
-  dependencies:
-    babel-plugin-syntax-decorators "^6.1.18"
-    babel-runtime "^6.2.0"
-    babel-template "^6.3.0"
 
 babel-plugin-transform-es2015-arrow-functions@^6.22.0:
   version "6.22.0"
@@ -986,7 +1011,7 @@ babel-register@^6.24.1:
     mkdirp "^0.5.1"
     source-map-support "^0.4.2"
 
-babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0:
+babel-runtime@^6.18.0, babel-runtime@^6.22.0:
   version "6.25.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.25.0.tgz#33b98eaa5d482bb01a8d1aa6b437ad2b01aec41c"
   dependencies:
@@ -1000,7 +1025,7 @@ babel-runtime@^6.26.0:
     core-js "^2.4.0"
     regenerator-runtime "^0.11.0"
 
-babel-template@^6.24.1, babel-template@^6.25.0, babel-template@^6.3.0:
+babel-template@^6.24.1, babel-template@^6.25.0:
   version "6.25.0"
   resolved "https://registry.yarnpkg.com/babel-template/-/babel-template-6.25.0.tgz#665241166b7c2aa4c619d71e192969552b10c071"
   dependencies:
@@ -2364,7 +2389,7 @@ ember-ajax@^3.0.0:
   dependencies:
     ember-cli-babel "^6.0.0"
 
-ember-cli-babel@^5.1.3, ember-cli-babel@^5.1.5, ember-cli-babel@^5.1.6:
+ember-cli-babel@^5.1.5, ember-cli-babel@^5.1.6:
   version "5.2.4"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-5.2.4.tgz#5ce4f46b08ed6f6d21e878619fb689719d6e8e13"
   dependencies:
@@ -2455,13 +2480,12 @@ ember-cli-get-component-path-option@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ember-cli-get-component-path-option/-/ember-cli-get-component-path-option-1.0.0.tgz#0d7b595559e2f9050abed804f1d8eff1b08bc771"
 
-ember-cli-github-pages@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/ember-cli-github-pages/-/ember-cli-github-pages-0.1.2.tgz#83b11d307858595582ba61e90602209a37d5b348"
+ember-cli-github-pages@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ember-cli-github-pages/-/ember-cli-github-pages-0.2.0.tgz#2789d178936d8a1350ebbb1a300ab90760a111da"
   dependencies:
-    ember-cli-babel "^5.1.3"
-    ember-cli-version-checker "^1.1.6"
-    rsvp "^3.0.14"
+    ember-cli-version-checker "^2.1.0"
+    rsvp "^4.7.0"
 
 ember-cli-htmlbars-inline-precompile@^1.0.0:
   version "1.0.2"
@@ -2574,12 +2598,6 @@ ember-cli-string-utils@^1.0.0, ember-cli-string-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
 
-ember-cli-test-info@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-test-info/-/ember-cli-test-info-1.0.0.tgz#ed4e960f249e97523cf891e4aed2072ce84577b4"
-  dependencies:
-    ember-cli-string-utils "^1.0.0"
-
 ember-cli-test-loader@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/ember-cli-test-loader/-/ember-cli-test-loader-2.2.0.tgz#3fb8d5d1357e4460d3f0a092f5375e71b6f7c243"
@@ -2599,7 +2617,7 @@ ember-cli-valid-component-name@^1.0.0:
   dependencies:
     silent-error "^1.0.0"
 
-ember-cli-version-checker@1.3.1, ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.1.6, ember-cli-version-checker@^1.2.0:
+ember-cli-version-checker@1.3.1, ember-cli-version-checker@^1.0.2, ember-cli-version-checker@^1.2.0:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-1.3.1.tgz#0bc2d134c830142da64bf9627a0eded10b61ae72"
   dependencies:
@@ -2615,6 +2633,13 @@ ember-cli-version-checker@^2.0.0:
 ember-cli-version-checker@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-2.1.0.tgz#fc79a56032f3717cf844ada7cbdec1a06fedb604"
+  dependencies:
+    resolve "^1.3.3"
+    semver "^5.3.0"
+
+ember-cli-version-checker@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/ember-cli-version-checker/-/ember-cli-version-checker-2.1.2.tgz#305ce102390c66e4e0f1432dea9dc5c7c19fed98"
   dependencies:
     resolve "^1.3.3"
     semver "^5.3.0"
@@ -2706,6 +2731,14 @@ ember-cli@~3.0.1:
     watch-detector "^0.1.0"
     yam "0.0.22"
 
+ember-compatibility-helpers@^1.0.0:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/ember-compatibility-helpers/-/ember-compatibility-helpers-1.1.2.tgz#ae0ee4a7a2858b5ffdf79b428c23aee85c47d93d"
+  dependencies:
+    babel-plugin-debug-macros "^0.2.0"
+    ember-cli-version-checker "^2.1.1"
+    semver "^5.4.1"
+
 ember-concurrency@^0.8.7:
   version "0.8.7"
   resolved "https://registry.yarnpkg.com/ember-concurrency/-/ember-concurrency-0.8.7.tgz#346f5c88f2d5e987fb7e7324f8eb53ae3bae0970"
@@ -2715,15 +2748,17 @@ ember-concurrency@^0.8.7:
     ember-getowner-polyfill "^1.1.0"
     ember-maybe-import-regenerator "^0.1.5"
 
-ember-decorators@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/ember-decorators/-/ember-decorators-1.2.1.tgz#dce9b9f1ae3999ea0fadf205370b8600238954d6"
+ember-decorators@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/ember-decorators/-/ember-decorators-3.0.0.tgz#23cee0ebea3f86806cd15b638bf5ffb40870ccf4"
   dependencies:
-    babel-plugin-transform-class-properties "^6.24.1"
-    babel-plugin-transform-decorators-legacy "^1.3.4"
+    "@ember-decorators/component" "^3.0.0"
+    "@ember-decorators/controller" "^3.0.0"
+    "@ember-decorators/data" "^3.0.0"
+    "@ember-decorators/object" "^3.0.0"
+    "@ember-decorators/service" "^3.0.0"
     ember-cli-babel "^6.0.0"
-    ember-cli-version-checker "^2.0.0"
-    ember-macro-helpers "^0.15.1"
+    semver "^5.5.0"
 
 ember-disable-prototype-extensions@^1.1.2:
   version "1.1.3"
@@ -2755,15 +2790,6 @@ ember-load-initializers@^1.0.0:
   dependencies:
     ember-cli-babel "^6.0.0-beta.7"
 
-ember-macro-helpers@^0.15.1:
-  version "0.15.1"
-  resolved "https://registry.yarnpkg.com/ember-macro-helpers/-/ember-macro-helpers-0.15.1.tgz#a402651fafb3a25b3612a8c09843bc4061553a13"
-  dependencies:
-    ember-cli-babel "^6.0.0"
-    ember-cli-string-utils "^1.1.0"
-    ember-cli-test-info "^1.0.0"
-    ember-weakmap "^2.0.0"
-
 ember-maybe-import-regenerator@^0.1.5, ember-maybe-import-regenerator@^0.1.6:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/ember-maybe-import-regenerator/-/ember-maybe-import-regenerator-0.1.6.tgz#35d41828afa6d6a59bc0da3ce47f34c573d776ca"
@@ -2773,12 +2799,12 @@ ember-maybe-import-regenerator@^0.1.5, ember-maybe-import-regenerator@^0.1.6:
     ember-cli-babel "^6.0.0-beta.4"
     regenerator-runtime "^0.9.5"
 
-ember-native-dom-helpers@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/ember-native-dom-helpers/-/ember-native-dom-helpers-0.5.2.tgz#ba6123230fc32c3350f90a8f9183584a022215fa"
+ember-native-dom-helpers@^0.6.0:
+  version "0.6.2"
+  resolved "https://registry.yarnpkg.com/ember-native-dom-helpers/-/ember-native-dom-helpers-0.6.2.tgz#ad1f82d64ac9abdd612022f4f390bdb6653b3d39"
   dependencies:
     broccoli-funnel "^1.1.0"
-    ember-cli-babel "^6.1.0"
+    ember-cli-babel "^6.6.0"
 
 ember-qunit@^3.3.2:
   version "3.3.2"
@@ -2867,12 +2893,6 @@ ember-try@^0.2.23:
     rimraf "^2.3.2"
     rsvp "^3.0.17"
     semver "^5.1.0"
-
-ember-weakmap@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ember-weakmap/-/ember-weakmap-2.0.0.tgz#71c6819a8bfd0b077ae17ca1d9053fc5db06e4ac"
-  dependencies:
-    ember-cli-babel "^5.1.6"
 
 encodeurl@~1.0.1:
   version "1.0.1"
@@ -6667,6 +6687,10 @@ semver@^4.3.1:
 semver@^5.4.1:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.5.0.tgz#dc4bbc7a6ca9d916dee5d43516f0092b58f7b8ab"
+
+semver@^5.5.0:
+  version "5.6.0"
+  resolved "https://registry.yarnpkg.com/semver/-/semver-5.6.0.tgz#7e74256fbaa49c75aa7c7a205cc22799cac80004"
 
 semver@~5.1.0:
   version "5.1.1"
