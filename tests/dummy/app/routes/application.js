@@ -1,9 +1,11 @@
 import Route from '@ember/routing/route';
-import { task, timeout } from 'ember-concurrency';
+import { task } from 'ember-concurrency-decorators';
+import { timeout } from 'ember-concurrency';
 
 export default class extends Route {
-  taskOnApplicationRoute = task(function*(...args) {
+  @task
+  *taskOnApplicationRoute(...args) {
     yield timeout(1000);
     return args;
-  });
+  }
 }
