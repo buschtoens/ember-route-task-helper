@@ -14,7 +14,9 @@ export function getCurrentHandlerInfos(router) {
 }
 
 export function getCurrentRoutes(router) {
-  return A(getCurrentHandlerInfos(router)).mapBy('handler').reverse();
+  return A(getCurrentHandlerInfos(router))
+    .mapBy('handler')
+    .reverse();
 }
 
 export function findTaskInCurrentRouteHierarchy(router, taskName) {

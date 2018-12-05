@@ -146,6 +146,7 @@ export default Route.extends({
   </button>
 {{/if}}
 ```
+
 ### Currying
 
 ```js
@@ -273,7 +274,7 @@ export default Component.extends({
 
 ### Notes on DDAU
 
-In my opinion, using `routeTask` in components *generally* isn't a good design pattern. I would much rather prefer to explicitly pass the route task as an attribute:
+In my opinion, using `routeTask` in components _generally_ isn't a good design pattern. I would much rather prefer to explicitly pass the route task as an attribute:
 
 ```hbs
 {{my-component taskName=(route-task "taskName")}}
@@ -285,7 +286,7 @@ Calling `routeTask` inside a component is really non-transparent and promotes an
 
 On the other hand, you can already call `(route-task)` in the component's template.
 
-I've implemented it for feature parity. But just because it's there, doesn't mean you *have* to use it. But don't let me stop you. :stuck_out_tongue_winking_eye: 
+I've implemented it for feature parity. But just because it's there, doesn't mean you _have_ to use it. But don't let me stop you. :stuck_out_tongue_winking_eye:
 
 ## Contributing
 
@@ -295,7 +296,7 @@ This addon is using the [Prettier code formatter][prettier]. It's embedded as a 
 
 ## Attribution
 
-The original idea for this addon was brought up in [machty/ember-concurrency#89][issue-89] by [@Luiz-N][Luiz-n]. This addon is in many ways a straight copy and paste from [ember-route-action-helper][ember-route-action-helper] by [@DockYard][DockYard].
+The original idea for this addon was brought up in [machty/ember-concurrency#89][issue-89] by [@Luiz-N][luiz-n]. This addon is in many ways a straight copy and paste from [ember-route-action-helper][ember-route-action-helper] by [@DockYard][dockyard].
 
 A huge **thank you** to goes out to [@machty][machty] for developing [ember-concurrency][ember-concurrency] in the first place. :heart:
 
@@ -303,8 +304,8 @@ A huge **thank you** to goes out to [@machty][machty] for developing [ember-conc
 [ember-route-action-helper]: https://github.com/DockYard/ember-route-action-helper
 [ember-invoke-action]: https://github.com/martndemus/ember-invoke-action
 [issue-89]: https://github.com/machty/ember-concurrency/issues/89
-[Luiz-n]: https://github.com/Luiz-N
-[DockYard]: https://github.com/DockYard
+[luiz-n]: https://github.com/Luiz-N
+[dockyard]: https://github.com/DockYard
 [machty]: https://github.com/machty
 [new-issue]: https://github.com/buschtoens/ember-route-task-helper/issues/new
 [prettier]: https://prettier.io/
