@@ -83,17 +83,14 @@ test('it finds a task on a parent route of the current route and can perform it'
   await waitUntil(() => find('.task-component.is-done'));
 });
 
-skip(
-  'it instantly throws an error, if the task cannot be found',
-  async function() {
-    this.application.register(
-      'template:test.no-task-route',
-      hbs`{{task-component (route-task "TEST_TASK")}}`
-    );
+skip('it instantly throws an error, if the task cannot be found', async function() {
+  this.application.register(
+    'template:test.no-task-route',
+    hbs`{{task-component (route-task "TEST_TASK")}}`
+  );
 
-    await visit('/test/no-task-route');
-  }
-);
+  await visit('/test/no-task-route');
+});
 
 test('it can perform a task with arguments', async function() {
   this.application.register(
