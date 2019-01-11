@@ -628,9 +628,9 @@
     to-fast-properties "^2.0.0"
 
 "@ember-decorators/babel-transforms@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@ember-decorators/babel-transforms/-/babel-transforms-4.0.0.tgz#a1358f5d185c3e4f722b5b30d5bae6e9884cae07"
-  integrity sha512-67bJ5EXwMYd96WiiloSsgcvZplSUKSKl20rmjFve3+AXWislTQbnTKjwMPNMjKeajEALwmC7if+EkQUoCqrUog==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/babel-transforms/-/babel-transforms-4.0.1.tgz#7b0dbbff9eaafe732cbf795df07fa94b3ab23305"
+  integrity sha512-WwLYVz0hIg0wa7kAobYOBPpxQBjysvmm7VirNcrGUnq8MHdTDUkvGxs6UpacxLKXu6UycZ5UZo5H8tKzIOeoDA==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.1.0"
     "@babel/plugin-proposal-decorators" "^7.1.2"
