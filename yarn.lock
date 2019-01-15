@@ -627,10 +627,10 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@ember-decorators/babel-transforms@^4.0.0":
-  version "4.0.3"
-  resolved "https://registry.yarnpkg.com/@ember-decorators/babel-transforms/-/babel-transforms-4.0.3.tgz#03382d93d4c160430a350b1e1339a8b703338f1d"
-  integrity sha512-ByNZiZ2Rhl1PyHDpnrn2dhl3599ZWhpgg0p6LtTfRao5B/vkfBsxdwb/aKqAbxM0OQp+6+f9i6D20BCWChxXng==
+"@ember-decorators/babel-transforms@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/babel-transforms/-/babel-transforms-5.0.0.tgz#844f4e844756f76e646a0d2ab2d58b9c78c18b16"
+  integrity sha512-oLZRBia0PGZNJ+cwAICE6kC5z50SZKS7HBefaSIHVxyHOpGdag04gaBrWFS7Rl9kkhwkOjOQb9+BF1yIqx0sZQ==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.1.0"
     "@babel/plugin-proposal-decorators" "^7.1.2"
