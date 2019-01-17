@@ -3686,9 +3686,9 @@ ember-compatibility-helpers@^1.1.2:
     semver "^5.4.1"
 
 ember-concurrency-decorators@^0.5.0:
-  version "0.5.0"
-  resolved "https://registry.yarnpkg.com/ember-concurrency-decorators/-/ember-concurrency-decorators-0.5.0.tgz#498c54ee1a6ab643f6be2161145b104cb737f8b0"
-  integrity sha512-zVkyqZd2qn+HqUhrilvdAy8s4ClRV2TIqOL/JU3b+QwXGbuDCEN1tA8CsLmpctKsY51gzqQlKKZbMS5X3tL8Kw==
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/ember-concurrency-decorators/-/ember-concurrency-decorators-0.5.2.tgz#17b7443f838573609adb6948605e6c351bbb3a7a"
+  integrity sha512-q9Fef7TRn8ZQwNzcKjreC1q4xzZgsOEWWQM8kb/IuQL3BFC0KnLPbdvsFqIwee88yadJgeQjp3ig6eHFG0Nt4A==
   dependencies:
     "@ember-decorators/utils" "^3.1.2"
     ember-cli-babel "^7.1.3"
