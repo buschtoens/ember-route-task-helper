@@ -654,16 +654,15 @@
     ember-cli-babel-plugin-helpers "^1.0.0"
     ember-cli-version-checker "^2.1.0"
 
-"@ember-decorators/utils@^3.1.2":
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/@ember-decorators/utils/-/utils-3.1.4.tgz#a80f715b20576783f0a5b7baeed57a59a131161e"
-  integrity sha512-LzCq6uhVA0klxpOY0ymDeg2OSKSqsjNtKFKFJdncy0da/4oHFh+lYWSIukf5PVNMTZkQoM/6oFxmzPQo13G6Xg==
+"@ember-decorators/utils@^3.1.2 || ^4.0.0 || ^5.0.0":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@ember-decorators/utils/-/utils-5.1.1.tgz#fe99e642f28184e5bf31d580a99d7c2cebea86b3"
+  integrity sha512-c7U+FY8XNi9blwv4apzrPpw2YMPVf5MjDZA2HUIyNvJmEVoFib8jTbBE05F6A/UWuzVflc36drICVtv2n/clIg==
   dependencies:
-    babel-plugin-debug-macros "^0.1.11"
+    babel-plugin-debug-macros "^0.2.0"
     ember-cli-babel "^7.1.3"
     ember-cli-version-checker "^2.1.2"
     ember-compatibility-helpers "^1.1.2"
-    fs-extra "^7.0.1"
     semver "^5.6.0"
 
 "@ember/optional-features@^0.7.0":
@@ -1391,7 +1390,7 @@ babel-plugin-dead-code-elimination@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/babel-plugin-dead-code-elimination/-/babel-plugin-dead-code-elimination-1.0.2.tgz#5f7c451274dcd7cccdbfbb3e0b85dd28121f0f65"
 
-babel-plugin-debug-macros@^0.1.10, babel-plugin-debug-macros@^0.1.11:
+babel-plugin-debug-macros@^0.1.10:
   version "0.1.11"
   resolved "https://registry.yarnpkg.com/babel-plugin-debug-macros/-/babel-plugin-debug-macros-0.1.11.tgz#6c562bf561fccd406ce14ab04f42c218cf956605"
   dependencies:
@@ -3693,12 +3692,12 @@ ember-compatibility-helpers@^1.1.2:
     semver "^5.4.1"
 
 ember-concurrency-decorators@^0.5.0:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/ember-concurrency-decorators/-/ember-concurrency-decorators-0.5.2.tgz#17b7443f838573609adb6948605e6c351bbb3a7a"
-  integrity sha512-q9Fef7TRn8ZQwNzcKjreC1q4xzZgsOEWWQM8kb/IuQL3BFC0KnLPbdvsFqIwee88yadJgeQjp3ig6eHFG0Nt4A==
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/ember-concurrency-decorators/-/ember-concurrency-decorators-0.5.3.tgz#4008befed10497993574c227b60d2498943e0d40"
+  integrity sha512-Opcgr8ffdktUw7AbiuNLSOi8NW0S2WRhUjt4utwVi0ZBYvzuwNEhk0UNZJNsG6fSGD3q7IM2kkrHrKHoNRLxBg==
   dependencies:
-    "@ember-decorators/utils" "^3.1.2"
-    ember-cli-babel "^7.1.3"
+    "@ember-decorators/utils" "^3.1.2 || ^4.0.0 || ^5.0.0"
+    ember-cli-babel "^7.2.0"
 
 ember-concurrency@^0.8.23:
   version "0.8.26"
@@ -4649,7 +4648,7 @@ fs-extra@^6.0.1:
     jsonfile "^4.0.0"
     universalify "^0.1.0"
 
-fs-extra@^7.0.0, fs-extra@^7.0.1:
+fs-extra@^7.0.0:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-7.0.1.tgz#4f189c44aa123b895f722804f55ea23eadc348e9"
   integrity sha512-YJDaCJZEnBmcbw13fvdAM9AwNOJwOzrE4pqMqBq5nFiEqXUqHwlK4B+3pUw6JNvfSPtX05xFHtYy/1ni01eGCw==
