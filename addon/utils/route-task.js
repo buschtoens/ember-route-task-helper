@@ -23,17 +23,16 @@ export default function routeTask(context, taskName, ...params) {
 
 export function findTaskInCurrentRouteHierarchy(router, taskName) {
   const owner = getOwner(router);
-  let currentRoute = get(router, 'currentRoute');
+  const routeSegments = get(router, 'currentRouteName').split('.');
 
-  while (currentRoute) {
-    const realRoute = owner.lookup(`route:${currentRoute.name}`);
-    const task = get(realRoute, taskName);
+  for (let i = routeSegments.length - 1; i >= 0; i--) {
+    const routeName = routeSegments.slice(0, i).join('.') || 'application';
+    const route = owner.lookup(`route:${routeName}`);
+    const task = get(route, taskName);
 
     if (task instanceof Task) {
       return task;
     }
-
-    currentRoute = currentRoute.parent;
   }
 
   return null;
