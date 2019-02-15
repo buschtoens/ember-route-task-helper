@@ -1,16 +1,9 @@
-import Router from '@ember/routing/router';
+import { getOwner } from '@ember/application';
 import { assert } from '@ember/debug';
-import {
-  getRouter,
-  findTaskInCurrentRouteHierarchy
-} from 'ember-route-task-helper/utils/router';
+import { get } from '@ember/object';
+import { Task } from 'ember-concurrency/-task-property';
 
-export function routeTaskFromRouter(router, taskName, ...params) {
-  assert(
-    '[ember-route-task-helper] No router provided to `routeTaskFromRouter`',
-    router instanceof Router
-  );
-
+export function routeTaskFromRouterService(router, taskName, ...params) {
   const task = findTaskInCurrentRouteHierarchy(router, taskName);
   assert(`[ember-route-task-helper] Unable to find task ${taskName}`, task);
 
@@ -22,8 +15,25 @@ export function routeTaskFromRouter(router, taskName, ...params) {
 }
 
 export default function routeTask(context, taskName, ...params) {
-  const router = getRouter(context);
-  assert('[ember-route-task-helper] Unable to lookup router', router);
+  const router = getOwner(context).lookup('service:router');
+  assert('[ember-route-task-helper] Unable to lookup router service', router);
 
-  return routeTaskFromRouter(router, taskName, ...params);
+  return routeTaskFromRouterService(router, taskName, ...params);
+}
+
+export function findTaskInCurrentRouteHierarchy(router, taskName) {
+  const owner = getOwner(router);
+  const routeSegments = get(router, 'currentRouteName').split('.');
+
+  for (let i = routeSegments.length - 1; i >= 0; i--) {
+    const routeName = routeSegments.slice(0, i).join('.') || 'application';
+    const route = owner.lookup(`route:${routeName}`);
+    const task = get(route, taskName);
+
+    if (task instanceof Task) {
+      return task;
+    }
+  }
+
+  return null;
 }

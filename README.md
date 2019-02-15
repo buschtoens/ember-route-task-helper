@@ -15,11 +15,16 @@ like [**ember-route-action-helper**][ember-route-action-helper] but for
 
 ## Installation
 
-This addon will work on Ember versions `1.13.x` and up only, due to use of the
-new `Helper` implementation.
-
 ```
 ember install ember-route-task-helper
+```
+
+This addon will work on Ember versions `2.4.x` and up only, due to use of the
+new `RouterService`. If your Ember version does not natively support it yet, you
+need to install the polyfill:
+
+```
+ember install ember-router-service-polyfill
 ```
 
 Of course, you need to have [**ember-concurrency**][ember-concurrency]
