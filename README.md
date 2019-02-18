@@ -4,7 +4,7 @@
 [![npm version](https://badge.fury.io/js/ember-route-task-helper.svg)](http://badge.fury.io/js/ember-route-task-helper)
 [![Download Total](https://img.shields.io/npm/dt/ember-route-task-helper.svg)](http://badge.fury.io/js/ember-route-task-helper)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-route-task-helper.svg)](https://emberobserver.com/addons/ember-route-task-helper)
-[![Greenkeeper badge](https://badges.greenkeeper.io/buschtoens/ember-route-task-helper.svg)](https://greenkeeper.io/)
+[![Dependabot enabled](https://img.shields.io/badge/dependabot-enabled-blue.svg?logo=dependabot)](https://dependabot.com/)
 [![dependencies Status](https://david-dm.org/buschtoens/ember-route-task-helper/status.svg)](https://david-dm.org/buschtoens/ember-route-task-helper)
 [![devDependencies Status](https://david-dm.org/buschtoens/ember-route-task-helper/dev-status.svg)](https://david-dm.org/buschtoens/ember-route-task-helper?type=dev)
 
