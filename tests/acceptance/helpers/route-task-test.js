@@ -10,7 +10,7 @@ import { timeout } from 'ember-concurrency';
 import { Task } from 'ember-concurrency/-task-property';
 import { task } from 'ember-concurrency-decorators';
 
-module('Acceptance | main', function(hooks) {
+module('Acceptance | main', hooks => {
   setupApplicationTest(hooks);
 
   hooks.beforeEach(function(assert) {
@@ -26,12 +26,15 @@ module('Acceptance | main', function(hooks) {
       isSuccessful: false,
 
       async click() {
-        const task = get(this, 'task');
-        assert.ok(task, 'there is a `task` attribute present');
-        assert.ok(task instanceof Task, '`task` is an instance of `Task`');
+        const taskAttribute = get(this, 'task');
+        assert.ok(taskAttribute, 'there is a `task` attribute present');
+        assert.ok(
+          taskAttribute instanceof Task,
+          '`task` is an instance of `Task`'
+        );
 
         const args = get(this, 'args') || [];
-        const actualReturnValue = await task.perform(...args);
+        const actualReturnValue = await taskAttribute.perform(...args);
 
         run(() => set(this, 'isDone', true));
 

@@ -2,6 +2,12 @@
 const { execSync } = require('child_process');
 const generateChangelog = require('ember-cli-changelog/lib/tasks/release-with-changelog');
 
+function runCommand(command) {
+  console.log(`running: ${command}`);
+  const output = execSync(command, { encoding: 'utf8' });
+  console.log(output);
+}
+
 module.exports = {
   publish: true,
   beforeCommit: generateChangelog,
@@ -15,9 +21,3 @@ module.exports = {
     runCommand('git push origin gh-pages:gh-pages');
   }
 };
-
-function runCommand(command) {
-  console.log(`running: ${command}`);
-  const output = execSync(command, { encoding: 'utf8' });
-  console.log(output);
-}
