@@ -3,7 +3,7 @@ import { setupApplicationTest } from 'ember-qunit';
 import { visit, click, find, waitUntil } from 'ember-test-helpers';
 import Component from '@ember/component';
 import Route from '@ember/routing/route';
-import { get, set } from '@ember/object';
+import { get, set, computed } from '@ember/object';
 import { run } from '@ember/runloop';
 import hbs from 'htmlbars-inline-precompile';
 import { task, timeout } from 'ember-concurrency';
@@ -88,6 +88,52 @@ module('Acceptance | main', function(hooks) {
     this.owner.register(
       'template:test.no-task-route',
       hbs`{{task-component (route-task "TEST_TASK")}}`
+    );
+
+    await visit('/test/no-task-route');
+  });
+
+  test('it finds a task on the leaf route', async function(assert) {
+    assert.expect(1);
+
+    this.owner.register(
+      'template:test.no-task-route',
+      hbs`{{route-task "TEST_TASK"}}`
+    );
+
+    this.owner.register(
+      'route:test.no-task-route',
+      Route.extend({
+        task: task(function*() {}),
+
+        TEST_TASK: computed(function() {
+          assert.ok(true);
+          return get(this, 'task');
+        })
+      })
+    );
+
+    await visit('/test/no-task-route');
+  });
+
+  test('it finds a task on the application route', async function(assert) {
+    assert.expect(1);
+
+    this.owner.register(
+      'template:test.no-task-route',
+      hbs`{{route-task "TEST_TASK"}}`
+    );
+
+    this.owner.register(
+      'route:application',
+      Route.extend({
+        task: task(function*() {}),
+
+        TEST_TASK: computed(function() {
+          assert.ok(true);
+          return get(this, 'task');
+        })
+      })
     );
 
     await visit('/test/no-task-route');

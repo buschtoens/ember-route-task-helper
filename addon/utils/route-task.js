@@ -25,7 +25,7 @@ export function findTaskInCurrentRouteHierarchy(router, taskName) {
   const owner = getOwner(router);
   const routeSegments = get(router, 'currentRouteName').split('.');
 
-  for (let i = routeSegments.length - 1; i >= 0; i--) {
+  for (let i = routeSegments.length; i >= 0; i--) {
     const routeName = routeSegments.slice(0, i).join('.') || 'application';
     const route = owner.lookup(`route:${routeName}`);
     const task = get(route, taskName);
