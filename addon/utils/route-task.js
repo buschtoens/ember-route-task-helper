@@ -7,7 +7,7 @@ export function routeTaskFromRouterService(router, taskName, ...params) {
   const task = findTaskInCurrentRouteHierarchy(router, taskName);
   assert(`[ember-route-task-helper] Unable to find task ${taskName}`, task);
 
-  if (params.length) {
+  if (params.length > 0) {
     return task._curry(...params);
   }
 

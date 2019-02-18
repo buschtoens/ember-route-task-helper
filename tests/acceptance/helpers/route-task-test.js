@@ -3,11 +3,12 @@ import { setupApplicationTest } from 'ember-qunit';
 import { visit, click, find, waitUntil } from 'ember-test-helpers';
 import Component from '@ember/component';
 import Route from '@ember/routing/route';
-import { get, set, computed } from '@ember/object';
+import { get, set } from '@ember/object';
 import { run } from '@ember/runloop';
 import hbs from 'htmlbars-inline-precompile';
-import { task, timeout } from 'ember-concurrency';
+import { timeout } from 'ember-concurrency';
 import { Task } from 'ember-concurrency/-task-property';
+import { task } from 'ember-concurrency-decorators';
 
 module('Acceptance | main', function(hooks) {
   setupApplicationTest(hooks);
@@ -50,13 +51,14 @@ module('Acceptance | main', function(hooks) {
     });
     this.owner.register('component:task-component', TaskComponent);
 
-    const TaskRoute = Route.extend({
-      TEST_TASK: task(function*(...params) {
+    class TaskRoute extends Route {
+      @task
+      *TEST_TASK(...params) {
         assert.ok(true, 'task was properly triggered on the route');
         yield timeout(10);
         return params;
-      })
-    });
+      }
+    }
     this.owner.register('route:test.task-route', TaskRoute);
   });
 
@@ -103,14 +105,15 @@ module('Acceptance | main', function(hooks) {
 
     this.owner.register(
       'route:test.no-task-route',
-      Route.extend({
-        task: task(function*() {}),
+      class extends Route {
+        @task
+        *task() {}
 
-        TEST_TASK: computed(function() {
+        get TEST_TASK() {
           assert.ok(true);
           return get(this, 'task');
-        })
-      })
+        }
+      }
     );
 
     await visit('/test/no-task-route');
@@ -126,14 +129,15 @@ module('Acceptance | main', function(hooks) {
 
     this.owner.register(
       'route:application',
-      Route.extend({
-        task: task(function*() {}),
+      class extends Route {
+        @task
+        *task() {}
 
-        TEST_TASK: computed(function() {
+        get TEST_TASK() {
           assert.ok(true);
           return get(this, 'task');
-        })
-      })
+        }
+      }
     );
 
     await visit('/test/no-task-route');
