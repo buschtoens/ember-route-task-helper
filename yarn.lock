@@ -3930,10 +3930,10 @@ ember-compatibility-helpers@^1.1.2:
     ember-cli-version-checker "^2.1.1"
     semver "^5.4.1"
 
-ember-concurrency-decorators@^0.5.0:
-  version "0.5.5"
-  resolved "https://registry.yarnpkg.com/ember-concurrency-decorators/-/ember-concurrency-decorators-0.5.5.tgz#cf9175119a4891d6d0cb1c9134d777c07ed9e1a8"
-  integrity sha512-tRLcoK9sgQV6QWzNj4SnU8gH/X17/w8HoQTNYWoh+v9Dwyn2xZoJCatJ5LweQw+23Hf7JA9WB7/r8KrD0kdWkw==
+ember-concurrency-decorators@^0.6.0:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/ember-concurrency-decorators/-/ember-concurrency-decorators-0.6.0.tgz#999045cbb91c02a8904703dbb5d6948617f73f74"
+  integrity sha512-kZ2TR07ZxYw7IXvtCp98NRJDq22hb/VDoyhpCA0sWgbR8YQ1C0RaRcCc+QrYKQIpuxHh+nByb9n+dPm5142T0g==
   dependencies:
     "@ember-decorators/utils" "^5.1.4 || 5.1.2 || ^4.0.0 || ^3.0.0"
     ember-cli-babel "^7.5.0"
