@@ -56,11 +56,11 @@ module('Acceptance | main', hooks => {
 
     class TaskRoute extends Route {
       @task
-      *TEST_TASK(...params) {
+      TEST_TASK = function*(...params) {
         assert.ok(true, 'task was properly triggered on the route');
         yield timeout(10);
         return params;
-      }
+      };
     }
     this.owner.register('route:test.task-route', TaskRoute);
   });
@@ -110,7 +110,7 @@ module('Acceptance | main', hooks => {
       'route:test.no-task-route',
       class extends Route {
         @task
-        *task() {}
+        task = function*() {};
 
         get TEST_TASK() {
           assert.ok(true);
@@ -134,7 +134,7 @@ module('Acceptance | main', hooks => {
       'route:application',
       class extends Route {
         @task
-        *task() {}
+        task = function*() {};
 
         get TEST_TASK() {
           assert.ok(true);

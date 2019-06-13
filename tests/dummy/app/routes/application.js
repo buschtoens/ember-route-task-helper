@@ -4,8 +4,8 @@ import { timeout } from 'ember-concurrency';
 
 export default class extends Route {
   @task
-  *taskOnApplicationRoute(...args) {
+  taskOnApplicationRoute = function*(...args) {
     yield timeout(1000);
     return args;
-  }
+  };
 }

@@ -1,6 +1,4 @@
-/* eslint-env node */
-
 module.exports = {
   root: true,
-  extends: '@clarkapp/eslint-config-node'
+  extends: '@clark/node'
 };
