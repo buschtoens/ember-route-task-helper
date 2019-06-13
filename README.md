@@ -37,6 +37,13 @@ ember install ember-concurrency
 
 Minimum required version is `0.6.x`.
 
+If you want to use this addon inside an engine, you'll need to have an
+`EngineRouterService`. You can use my PoC linked in
+[ember-engines#587][engine-router-service] until it's released officially as
+part of ember-engines.
+
+[engine-router-service]: https://github.com/ember-engines/ember-engines/issues/587#issue-355568777
+
 ## Usage
 
 ### Template Helper: `(route-task taskName ...curryArguments)`
