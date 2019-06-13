@@ -4277,7 +4277,7 @@ ember-source@~3.10.0:
     jquery "^3.3.1"
     resolve "^1.10.0"
 
-ember-template-lint@^1.0.0-beta.6:
+ember-template-lint@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ember-template-lint/-/ember-template-lint-1.2.0.tgz#ae360e93cd225a936f6f9c7b66f39d71f8bdf1b8"
   integrity sha512-kz+5YcmuP6dwxWUpOkanSGXkmPOP20MB7TXEngsa4zYV4Edo7yeHhWr756mj1MoZfFcxrRl1pS1CyqSmykdF9w==
