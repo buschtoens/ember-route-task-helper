@@ -800,14 +800,22 @@
     eslint-plugin-ember-best-practices "^1.1.2"
     lodash.merge "^4.6.2"
 
-"@clark/eslint-config-node@^1.3.0":
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config-node/-/eslint-config-node-1.4.1.tgz#41561721ba75c8880264eda60b5cdba32e2c2ed8"
-  integrity sha512-kpSrc7WxsNdwjkwaor+gjO/lKLIIvXFhuryzYT1N2e5Zlu/q3O5LMBpkMUeT03iZXZL7zo23Eo5uHCHAJeHfXA==
+"@clark/eslint-config-node-order-imports@^1.8.0":
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-config-node-order-imports/-/eslint-config-node-order-imports-1.8.0.tgz#e8f4d300144824cc5a01b394450d930f3054fd1f"
+  integrity sha512-514IfLrii7e3b3DgkSUt5tag3smZuOjr7Ej2lJ9QBhCwaRdFcTcPClAxUFV5Z2iWlpY77GD3HuYXaWdPRQoyiQ==
   dependencies:
-    "@clark/eslint-config" "^1.4.1"
+    eslint-plugin-import-helpers "^1.0.2"
+
+"@clark/eslint-config-node@^1.3.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-config-node/-/eslint-config-node-1.10.0.tgz#ae11e358f6aec3316204b1bb15e00f6571d670a0"
+  integrity sha512-zW3MU6/2gTuC+Uyl4AjvleREq1+/OtoKtEVgVjSoxOIIAnweUOn56MMKPwmqy+9B389gRGtFFi1ZHCVeJWaoEg==
+  dependencies:
+    "@clark/eslint-config" "^1.10.0"
+    "@clark/eslint-config-node-order-imports" "^1.8.0"
     eslint-plugin-node "^9.1.0"
-    lodash.merge "^4.6.1"
+    lodash.merge "^4.6.2"
 
 "@clark/eslint-config-typescript@^1.5.0":
   version "1.5.0"
@@ -818,12 +826,12 @@
     "@typescript-eslint/eslint-plugin" "^1.13.0"
     "@typescript-eslint/parser" "^1.13.0"
 
-"@clark/eslint-config@^1.4.1", "@clark/eslint-config@^1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@clark/eslint-config/-/eslint-config-1.5.0.tgz#bb04ba43e6fc8d152020cf3e89792e5c0e176e3a"
-  integrity sha512-/SvFFjuun4K5xH9ejZf7tzu2vIrew8iMP3OWWsXuac3c+lYnFzePNuHRsHxRasE7qsPPRoPWP2ijKD8s2dvFxA==
+"@clark/eslint-config@^1.10.0", "@clark/eslint-config@^1.5.0":
+  version "1.10.0"
+  resolved "https://registry.yarnpkg.com/@clark/eslint-config/-/eslint-config-1.10.0.tgz#9fc487341f65324fc50037c503676069248159a4"
+  integrity sha512-gIVefTHtnZeyVfYt1QzfYLV2ZXQT0mkrucHupHISyUVKqOp/ta5k4OEGGm/9GfrjM2JvSYxii9+ZhNh3u9dB+g==
   dependencies:
-    eslint-config-airbnb-base "^13.2.0"
+    eslint-config-airbnb-base "^14.0.0"
     eslint-config-prettier "^6.0.0"
     eslint-config-xo-space "^0.21.0"
     eslint-plugin-import "^2.18.2"
@@ -3291,10 +3299,10 @@ configstore@^4.0.0:
     write-file-atomic "^2.0.0"
     xdg-basedir "^3.0.0"
 
-confusing-browser-globals@^1.0.5:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.7.tgz#5ae852bd541a910e7ffb2dbb864a2d21a36ad29b"
-  integrity sha512-cgHI1azax5ATrZ8rJ+ODDML9Fvu67PimB6aNxBrc/QwSaDaM9eTfIEUHx3bBLJJ82ioSb+/5zfsMCCEJax3ByQ==
+confusing-browser-globals@^1.0.7:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/confusing-browser-globals/-/confusing-browser-globals-1.0.8.tgz#93ffec1f82a6e2bf2bc36769cc3a92fa20e502f3"
+  integrity sha512-lI7asCibVJ6Qd3FGU7mu4sfG4try4LX3+GVS+Gv8UlrEf2AeW57piecapnog2UHZSbcX/P/1UDWVaTsblowlZg==
 
 connect@^3.6.6:
   version "3.6.6"
@@ -4398,12 +4406,12 @@ eslint-ast-utils@^1.1.0:
     lodash.get "^4.4.2"
     lodash.zip "^4.2.0"
 
-eslint-config-airbnb-base@^13.2.0:
-  version "13.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-13.2.0.tgz#f6ea81459ff4dec2dda200c35f1d8f7419d57943"
-  integrity sha512-1mg/7eoB4AUeB0X1c/ho4vb2gYkNH8Trr/EgCT/aGmKhhG+F6vF5s8+iRBlWAzFIAphxIdp3YfEKgEl0f9Xg+w==
+eslint-config-airbnb-base@^14.0.0:
+  version "14.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-14.0.0.tgz#8a7bcb9643d13c55df4dd7444f138bf4efa61e17"
+  integrity sha512-2IDHobw97upExLmsebhtfoD3NAKhV4H0CJWP3Uprd/uk+cHuWYOczPVxQ8PxLFUAw7o3Th1RAU8u1DoUpr+cMA==
   dependencies:
-    confusing-browser-globals "^1.0.5"
+    confusing-browser-globals "^1.0.7"
     object.assign "^4.1.0"
     object.entries "^1.1.0"
 
@@ -6970,7 +6978,7 @@ lodash.keys@~2.3.0:
     lodash._shimkeys "~2.3.0"
     lodash.isobject "~2.3.0"
 
-lodash.merge@^4.3.1, lodash.merge@^4.6.0, lodash.merge@^4.6.1, lodash.merge@^4.6.2:
+lodash.merge@^4.3.1, lodash.merge@^4.6.0, lodash.merge@^4.6.2:
   version "4.6.2"
   resolved "https://registry.yarnpkg.com/lodash.merge/-/lodash.merge-4.6.2.tgz#558aa53b43b661e1925a0afdfa36a9a1085fe57a"
   integrity sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==
